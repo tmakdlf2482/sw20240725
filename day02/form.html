@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table, tr, th, td {
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <label for="">이름</label>
+    <input type="text" style="margin-bottom: 3px;">
+    <br>
+    
+    <label for="">부서</label>
+    <input type="text" style="margin-bottom: 3px;">
+    <br>
+    
+    <label for="">직책</label>
+    <input type="text" style="margin-bottom: 3px;">
+    <br>
+
+    <label for="">사진</label>
+    <input type="file" style="margin-bottom: 3px;">
+    <br>
+  </form>
+
+  <br>
+
+  <input type="button" value="새 사원 추가" style="background-color: red; color: white; border-radius: 5px; height: 30px; border: none; cursor: pointer;">
+
+  <br>
+  <hr>
+
+  <input type="button" value="선택 삭제"> | <label for="">검색 : </label><select name="" id=""><option value="">이름</option></select><input type="text" style="margin-left: 3px;">
+
+  <table border="1">
+    <tr style="background-color: #FFA500;">
+      <td><input type="checkbox" name="" id=""></td>
+      <th>번호</th>
+      <th colspan="2">사진</th>
+      <th>사원명</th>
+      <th>부서</th>
+      <th>직급</th>
+      <th>수정</th>
+      <th>삭제</th>
+    </tr>
+    <tr>
+      <td rowspan="5"><input type="checkbox" name="" id=""></td>
+      <td rowspan="5">1043</td>
+      <td colspan="2"><img src="./screen.png"></td>
+      <td>홍길동</td>
+      <td>개발</td>
+      <td>대리</td>
+      <td rowspan="5"><input type="button" value="edit"></td>
+      <td rowspan="5"><input type="button" value="delete"></td>
+    </tr>
+    <tr>
+      <th>번호</th>
+      <th>댓글 내용</th>
+      <th>작성자</th>
+      <th>수정</th>
+      <th>삭제</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>멋진 사진입니다</td>
+      <td>박문수</td>
+      <td>수정</td>
+      <td>삭제</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>좋아요^^ 퍼가요~</td>
+      <td>일지매</td>
+      <td>수정</td>
+      <td>삭제</td>
+    </tr>
+    <tr>
+      <td colspan="5">
+        댓글 <input type="text" name="" id=""> 작성자 <input type="text" name="" id=""> <input type="button" value="댓글입력">
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
