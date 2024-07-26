@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: space-between;
+    }
+    li button {
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+    <input type="text" id="todoInput" placeholder="Enter a new todo">
+    <button onclick="addTodo()">Add Todo</button>
+    <ul id="todoList"></ul>
+  </div>
+
+  <script>
+    function addTodo() {
+      const input = document.getElementById('todoInput'); // 사용자가 할일을 입력한 값
+      const todoText = input.value.trim(); // 할일을 입력한 값에 공백 제거
+
+      if (todoText === '') // 만약 아무것도 입력하지 않았으면 종료
+        return;
+
+      const li = document.createElement('li'); // ul안에 li라는 요소가 추가됨
+      // .textContent는 HTML 요소의 텍스트 내용을 가져오거나 설정 (해당 요소의 텍스트 값을 직접 조작 가능)
+      li.textContent = todoText; // li 요소에 사용자가 입력한 할 일 값 가져옴
+
+      const deleteButton = document.createElement('button'); // button 만듬
+      deleteButton.textContent = 'Delete'; // Delete 버튼의 글씨
+      deleteButton.onclick = function() {
+        li.remove(); // li 요소 삭제 (해당 항목 삭제)
+      };
+
+      li.appendChild(deleteButton); // li 요소에 Delete버튼 붙임
+
+      document.getElementById('todoList').appendChild(li); // 자식 todo 리스트 중 마지막 자식으로 붙임 (todo 계속 추가됨)
+      input.value = ''; // todo 입력란 초기화
+    }
+  </script>
+</body>
+</html>
